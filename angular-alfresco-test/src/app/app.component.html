@@ -1,0 +1,19 @@
+<div *ngIf="alfresco!=null">
+
+    <mat-card *ngFor="let entries of alfresco.list.entries " class="alfresco-card">
+
+      <mat-card-header *ngIf="entries.entry.target.file!=null">
+        <mat-card-title>File - Created by {{entries.entry.target.file.createdByUser.id | titlecase}}</mat-card-title>
+        <mat-card-subtitle>Name : {{entries.entry.target.file.name}} </mat-card-subtitle>
+        <mat-icon >file_copy</mat-icon>
+      </mat-card-header>
+
+      <mat-card-header *ngIf="entries.entry.target.folder!=null">
+        <mat-card-title>Folder - Created by {{entries.entry.target.folder.createdByUser.id | titlecase}} </mat-card-title>
+        <mat-card-subtitle>Name : {{entries.entry.target.folder.name}}</mat-card-subtitle>
+        <mat-icon>folder</mat-icon>
+      </mat-card-header>
+
+    </mat-card>
+
+</div>
