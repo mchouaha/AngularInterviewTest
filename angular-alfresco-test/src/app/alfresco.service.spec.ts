@@ -2,10 +2,12 @@ import {TestBed, inject} from '@angular/core/testing';
 import {AlfrescoService} from './alfresco.service';
 import {HttpClient} from "@angular/common/http";
 import {HttpHandler} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Alfresco} from "./alfresco-list";
 
 describe('AlfrescoService', () => {
+
   beforeEach(() => {
+
     TestBed.configureTestingModule({
       providers: [
         HttpClient,
@@ -18,7 +20,4 @@ describe('AlfrescoService', () => {
   it('should be created', inject([AlfrescoService], (service: AlfrescoService) => {
     expect(service.getData()).toBeTruthy();
   }));
-
-  // TODO: getData should return value
-
 });
